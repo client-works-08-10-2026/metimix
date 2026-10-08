@@ -3651,4 +3651,382 @@ button {
   .discount-highlight-pill { font-size: 1.15rem; padding: 8px 18px; }
 }
 
+/* =========================================================
+   ROTATING GRADIENT BORDER ANIMATION FOR ALL REMAINING BOXES
+   ========================================================= */
+
+/* 1. DANGER / WARNING CARDS (Red Flame Rotating Border) */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+@media (max-width: 992px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.why-card {
+  position: relative;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 26px 22px;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px -8px rgba(220, 38, 38, 0.12);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  min-height: 200px;
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #dc2626 25%,
+    #f87171 35%,
+    transparent 50%,
+    #dc2626 75%,
+    #f87171 85%,
+    transparent 100%
+  );
+  animation: rotateBorderGradient 4.5s linear infinite;
+  z-index: -2;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.why-card::after {
+  content: '';
+  position: absolute;
+  inset: 2.5px;
+  background: #ffffff;
+  border-radius: 17.5px;
+  z-index: -1;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(220, 38, 38, 0.3);
+}
+
+.why-card:hover::before {
+  animation-duration: 2.5s;
+}
+
+.why-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.danger-icon-bg {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+.why-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #991b1b;
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+}
+
+.why-card p {
+  font-size: 0.94rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 2. INGREDIENTS CARDS (Emerald / Herbal Rotating Border) */
+.ingredients-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 36px;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 992px) {
+  .ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.ingredient-card {
+  position: relative;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 22px 20px;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 8px 22px -6px rgba(16, 185, 129, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ingredient-card::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #16a34a 25%,
+    #34d399 35%,
+    transparent 50%,
+    #16a34a 75%,
+    #34d399 85%,
+    transparent 100%
+  );
+  animation: rotateBorderGradient 5s linear infinite;
+  z-index: -2;
+  opacity: 0.85;
+}
+
+.ingredient-card::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #ffffff;
+  border-radius: 16px;
+  z-index: -1;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px -8px rgba(16, 185, 129, 0.28);
+}
+
+.ing-badge-icon {
+  font-size: 1.8rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ing-details h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #14532d;
+  margin: 0 0 6px 0;
+}
+
+.ing-details p {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* 3. USAGE CARD (Gold / Forest Rotating Border) */
+.usage-card {
+  position: relative;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 28px 24px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 10px 30px -8px rgba(21, 128, 61, 0.15);
+  margin-top: 24px;
+}
+
+.usage-card::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #f59e0b 25%,
+    #fbbf24 35%,
+    transparent 50%,
+    #16a34a 75%,
+    #22c55e 85%,
+    transparent 100%
+  );
+  animation: rotateBorderGradient 5.5s linear infinite;
+  z-index: -2;
+  opacity: 0.9;
+}
+
+.usage-card::after {
+  content: '';
+  position: absolute;
+  inset: 2.5px;
+  background: #ffffff;
+  border-radius: 17.5px;
+  z-index: -1;
+}
+
+.usage-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.usage-icon {
+  background: #fef3c7;
+  color: #d97706;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usage-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.usage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.usage-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.88rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.usage-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: #15803d;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* 4. PRICING DISCOUNT CARD (Gold / Green Rotating Border) */
+.pricing-discount-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 38px 28px;
+  background: #ffffff;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 15px 40px -10px rgba(21, 128, 61, 0.25);
+  border: none;
+}
+
+.pricing-discount-card::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #16a34a 20%,
+    #facc15 35%,
+    transparent 50%,
+    #16a34a 70%,
+    #facc15 85%,
+    transparent 100%
+  );
+  animation: rotateBorderGradient 4s linear infinite;
+  z-index: -2;
+  opacity: 1;
+}
+
+.pricing-discount-card::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  border-radius: 21px;
+  z-index: -1;
+}
+
+
 
