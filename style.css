@@ -288,6 +288,48 @@ button {
   background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
 }
 
+.hero-headline-wrapper {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: #0f4c28;
+  border: 3px solid #facc15;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px -8px rgba(15, 76, 40, 0.35);
+}
+
+.hero-attention-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #fef08a;
+  line-height: 1.35;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-attention-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.highlight-brand {
+  color: #fde047;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .hero-attention-title {
+    font-size: 1.35rem;
+  }
+  .hero-attention-subtitle {
+    font-size: 1.05rem;
+  }
+}
+
 .main-banner-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
