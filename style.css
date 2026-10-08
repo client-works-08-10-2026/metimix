@@ -677,18 +677,37 @@ button {
 /* =========================================================
    PROBLEMS -> SOLUTION SECTION
    ========================================================= */
+/* =========================================================
+   PROBLEMS -> SOLUTION SECTION (HIGH VISIBILITY REDESIGN)
+   ========================================================= */
 .problems-section {
-  padding: 60px 0;
-  background-color: #ffffff;
+  padding: 65px 0 60px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faf6 50%, #ffffff 100%);
+  position: relative;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 50%, #22c55e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.pill-animated {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #14532d;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.15);
+  border: 1px solid #86efac;
 }
 
 .problems-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 22px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 600px) {
   .problems-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -697,76 +716,215 @@ button {
 @media (min-width: 992px) {
   .problems-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 26px;
   }
 }
 
 .problem-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: var(--radius-md);
-  padding: 24px;
-  transition: var(--transition);
+  background: #ffffff;
+  border: 1.8px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 26px 22px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .problem-card:hover {
+  transform: translateY(-6px);
   background: #ffffff;
-  border-color: #86efac;
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+}
+
+.problem-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Top Bar (Icon + Symptom Tag) */
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 18px;
 }
 
 .prob-icon-wrap {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.bg-soft-orange { background: #fff7ed; }
-.bg-soft-amber { background: #fef3c7; }
-.bg-soft-red { background: #fee2e2; }
-.bg-soft-green { background: #dcfce7; }
-.bg-soft-purple { background: #f3e8ff; }
-.bg-soft-teal { background: #ccfbf1; }
+.problem-card:hover .prob-icon-wrap {
+  transform: scale(1.1) rotate(4deg);
+}
+
+.symptom-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Color Theming per Card */
+/* 1. Orange Theme (Gas & Acidity) */
+.card-orange::before { background: linear-gradient(90deg, #f97316, #ea580c); }
+.card-orange:hover {
+  border-color: #fdba74;
+  box-shadow: 0 16px 32px -6px rgba(234, 88, 12, 0.18), 0 4px 10px rgba(0,0,0,0.03);
+}
+.icon-orange {
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  color: #ea580c;
+  border: 1px solid #fed7aa;
+}
+.tag-orange {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+/* 2. Amber Theme (Indigestion) */
+.card-amber::before { background: linear-gradient(90deg, #fbbf24, #d97706); }
+.card-amber:hover {
+  border-color: #fcd34d;
+  box-shadow: 0 16px 32px -6px rgba(217, 119, 6, 0.18), 0 4px 10px rgba(0,0,0,0.03);
+}
+.icon-amber {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+.tag-amber {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+/* 3. Rose Theme (Heartburn & Ulcer) */
+.card-rose::before { background: linear-gradient(90deg, #fb7185, #e11d48); }
+.card-rose:hover {
+  border-color: #fda4af;
+  box-shadow: 0 16px 32px -6px rgba(225, 29, 72, 0.18), 0 4px 10px rgba(0,0,0,0.03);
+}
+.icon-rose {
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+}
+.tag-rose {
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+/* 4. Emerald Theme (Stomach IBS) */
+.card-emerald::before { background: linear-gradient(90deg, #34d399, #16a34a); }
+.card-emerald:hover {
+  border-color: #86efac;
+  box-shadow: 0 16px 32px -6px rgba(22, 163, 74, 0.2), 0 4px 10px rgba(0,0,0,0.03);
+}
+.icon-emerald {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+.tag-emerald {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* 5. Purple Theme (Appetite & Vitality) */
+.card-purple::before { background: linear-gradient(90deg, #c084fc, #9333ea); }
+.card-purple:hover {
+  border-color: #d8b4fe;
+  box-shadow: 0 16px 32px -6px rgba(147, 51, 234, 0.18), 0 4px 10px rgba(0,0,0,0.03);
+}
+.icon-purple {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  color: #9333ea;
+  border: 1px solid #e9d5ff;
+}
+.tag-purple {
+  background: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid #e9d5ff;
+}
+
+/* 6. Teal Theme (Piles & Constipation) */
+.card-teal::before { background: linear-gradient(90deg, #2dd4bf, #0d9488); }
+.card-teal:hover {
+  border-color: #5eead4;
+  box-shadow: 0 16px 32px -6px rgba(13, 148, 136, 0.18), 0 4px 10px rgba(0,0,0,0.03);
+}
+.icon-teal {
+  background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+  color: #0d9488;
+  border: 1px solid #99f6e4;
+}
+.tag-teal {
+  background: #f0fdfa;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+}
 
 .prob-title {
-  font-size: 1.22rem;
+  font-size: 1.28rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #0f172a;
   margin-bottom: 8px;
+  line-height: 1.35;
 }
 
 .prob-text {
   font-size: 0.95rem;
-  color: #64748b;
-  line-height: 1.55;
+  color: #475569;
+  line-height: 1.6;
 }
 
-.btn-secondary-cta {
+.btn-problems-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  background: #f0fdf4;
-  color: #15803d;
-  padding: 12px 28px;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #ffffff;
+  padding: 14px 30px;
   border-radius: var(--radius-full);
   font-weight: 700;
-  font-size: 1.05rem;
-  border: 2px solid #86efac;
+  font-size: 1.08rem;
+  box-shadow: 0 8px 22px rgba(22, 101, 52, 0.3);
   transition: var(--transition);
 }
 
-.btn-secondary-cta:hover {
-  background: #15803d;
+.btn-problems-cta:hover {
+  background: linear-gradient(135deg, #15803d, #0f5127);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(22, 101, 52, 0.4);
   color: #ffffff;
-  border-color: #15803d;
 }
 
 /* =========================================================
