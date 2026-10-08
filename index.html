@@ -545,9 +545,13 @@
             <!-- Order Bump Upsell Card -->
             <div class="order-bump-card" id="orderBumpCard">
               <div class="bump-header" onclick="toggleBumpBox()">
-                <span class="bump-arrow-anim">➡️</span>
-                <input type="checkbox" id="bumpOfferCheck" class="bump-check" onchange="onBumpToggle(this.checked)" onclick="event.stopPropagation()">
-                <span class="bump-arrow-anim">👈</span>
+                <div class="bump-click-indicator">
+                  <span class="bump-badge-arrow">➔</span>
+                  <div class="bump-check-wrapper">
+                    <input type="checkbox" id="bumpOfferCheck" class="bump-check" onchange="onBumpToggle(this.checked)" onclick="event.stopPropagation()">
+                  </div>
+                  <span class="bump-pointing-finger">👉</span>
+                </div>
                 <label for="bumpOfferCheck" class="bump-header-text" onclick="event.stopPropagation()">মেথিমিক্স সহ নিতে ক্লিক করুন</label>
               </div>
               <div class="bump-body">

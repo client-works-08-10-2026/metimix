@@ -1686,14 +1686,14 @@ button {
   border-radius: var(--radius-sm);
   overflow: hidden;
   box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-  border: 1.5px solid #e2e8f0;
+  border: 2px dashed #94a3b8;
   margin-bottom: 22px;
   transition: var(--transition);
 }
 
 .order-bump-card.bump-active {
-  border-color: #16a34a;
-  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.18);
+  border: 2px solid #16a34a;
+  box-shadow: 0 6px 22px rgba(22, 163, 74, 0.22);
 }
 
 .bump-header {
@@ -1701,32 +1701,101 @@ button {
   padding: 12px 16px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
   border-bottom: 1px solid #e2e8f0;
   user-select: none;
+  transition: background 0.3s ease;
 }
 
 .order-bump-card.bump-active .bump-header {
   background: #f0fdf4;
 }
 
-.bump-arrow-anim {
-  font-size: 1.15rem;
+.bump-click-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bump-badge-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: #0284c7;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  animation: arrowPushAnim 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes arrowPushAnim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(5px); }
+}
+
+.bump-check-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bump-check {
-  width: 19px;
-  height: 19px;
+  width: 21px;
+  height: 21px;
   accent-color: #16a34a;
   cursor: pointer;
+  border-radius: 4px;
+  animation: pulseCheckboxGlow 1.6s infinite;
+}
+
+@keyframes pulseCheckboxGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+    transform: scale(1);
+  }
+}
+
+.bump-pointing-finger {
+  font-size: 1.35rem;
+  line-height: 1;
+  display: inline-block;
+  animation: fingerPointAnim 0.75s ease-in-out infinite alternate;
+}
+
+@keyframes fingerPointAnim {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(6px) rotate(-10deg);
+  }
 }
 
 .bump-header-text {
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  color: #334155;
+  color: #1e293b;
   cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bump-header:hover .bump-header-text {
+  color: #15803d;
 }
 
 .bump-body {
