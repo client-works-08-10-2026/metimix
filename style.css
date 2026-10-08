@@ -2871,3 +2871,742 @@ button {
   margin: 0;
 }
 
+/* =========================================================
+   TOP NAV BAR (www.naturinbd.com & Phone)
+   ========================================================= */
+.top-nav-bar {
+  background: #0f4c28;
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-brand-link:hover {
+  color: #facc15;
+}
+
+.nav-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #facc15;
+  text-decoration: none;
+  font-weight: 700;
+  background: rgba(250, 204, 21, 0.15);
+  padding: 3px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  transition: all 0.2s ease;
+}
+
+.nav-phone-link:hover {
+  background: #facc15;
+  color: #0f4c28;
+}
+
+.header-urgency-timer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 6px 14px;
+  border-radius: 9999px;
+}
+
+.timer-tag {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+@media (max-width: 768px) {
+  .header-urgency-timer {
+    display: none;
+  }
+}
+
+/* =========================================================
+   PAGE 1: HERO ATTENTION SECTION & HEADLINE BOX
+   ========================================================= */
+.hero-attention-section {
+  padding: 30px 0 40px;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.attention-headline-box {
+  background: #0f4c28;
+  border: 4px solid #facc15;
+  border-radius: 24px;
+  padding: 36px 28px;
+  color: #ffffff;
+  box-shadow: 0 15px 40px -10px rgba(15, 76, 40, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.attention-main-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fef08a;
+  text-align: center;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.attention-sub-banner {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 5px solid #facc15;
+  border-right: 5px solid #facc15;
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.attention-subtitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.highlight-yellow {
+  color: #fde047;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* 7 Days Guarantee Box */
+.guarantee-moneyback-card {
+  background: #ffffff;
+  color: #0f4c28;
+  border: 2px dashed #f59e0b;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 22px auto;
+  max-width: 680px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.guarantee-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f4c28;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Proof statement */
+.proof-statement-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.proof-statement-text {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #f1f5f9;
+  margin: 0;
+  text-align: center;
+}
+
+.badge-quote {
+  color: #fde047;
+  font-weight: 800;
+}
+
+/* Video Box inside Hero */
+.hero-video-box {
+  background: #000000;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 3px solid #facc15;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  margin-bottom: 28px;
+}
+
+.video-header-bar {
+  background: #14532d;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.video-brand-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.video-mini-logo {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.video-tag-text {
+  color: #fde047;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Yellow Cart Button (From Page 1, 2, 3) */
+.btn-yellow-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+  color: #0f172a;
+  font-size: 1.35rem;
+  font-weight: 800;
+  padding: 16px 44px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(234, 179, 8, 0.45);
+  border: 2px solid #ffffff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-yellow-cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(234, 179, 8, 0.6);
+  background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+  color: #000000;
+}
+
+.btn-cart-icon {
+  font-size: 1.4rem;
+}
+
+/* =========================================================
+   PAGE 2: REASONS WHY & DANGER WARNING CARDS
+   ========================================================= */
+.benefits-danger-section {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+/* Why eat card */
+.reasons-why-card {
+  border: 3px solid #16a34a;
+  border-radius: 22px;
+  padding: 34px 28px;
+  background: #f0fdf4;
+  box-shadow: 0 10px 30px -10px rgba(22, 163, 74, 0.15);
+}
+
+.reasons-heading-pill {
+  background: #15803d;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 15px rgba(21, 128, 61, 0.25);
+}
+
+.reasons-heading-pill h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fef08a;
+}
+
+.reasons-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reason-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: all 0.2s ease;
+}
+
+.reason-check-item:hover {
+  transform: translateX(4px);
+  border-color: #16a34a;
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.12);
+}
+
+.check-icon-svg {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.reason-text {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #14532d;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Danger Warning Card (Page 2) */
+.danger-warning-card {
+  border: 3px solid #dc2626;
+  border-radius: 22px;
+  padding: 34px 28px;
+  background: #fff5f5;
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.15);
+}
+
+.danger-heading-pill {
+  background: #166534;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 28px;
+  border-bottom: 4px solid #dc2626;
+}
+
+.danger-heading-pill h2 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fef08a;
+}
+
+.danger-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.danger-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: all 0.2s ease;
+}
+
+.danger-check-item:hover {
+  transform: translateX(4px);
+  border-color: #dc2626;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.12);
+}
+
+.danger-icon-svg {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.danger-text {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #991b1b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PAGE 2/3: INGREDIENTS INTRO SECTION
+   ========================================================= */
+.ingredients-intro-section {
+  padding: 50px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+.ingredients-intro-card {
+  background: #ffffff;
+  border: 2px solid #86efac;
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.06);
+}
+
+.intro-flex-layout {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.intro-img-wrap {
+  flex: 0 0 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.intro-product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.badge-herbal {
+  display: inline-block;
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.intro-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 14px 0;
+}
+
+.intro-desc-lead {
+  font-size: 1.12rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .intro-flex-layout {
+    flex-direction: column;
+  }
+  .intro-img-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   PAGE 3: SPECIAL PRICING OFFER CARD
+   ========================================================= */
+.special-offer-section {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+.pricing-discount-card {
+  border: 4px solid #15803d;
+  border-radius: 24px;
+  padding: 36px 28px;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: 0 15px 40px -10px rgba(21, 128, 61, 0.25);
+}
+
+.offer-pack-title h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #14532d;
+  margin: 0 0 14px 0;
+}
+
+.regular-price-wrap {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin-bottom: 16px;
+}
+
+.regular-price-wrap del {
+  color: #ef4444;
+  font-size: 1.45rem;
+}
+
+.discount-price-badge {
+  margin-bottom: 20px;
+}
+
+.discount-highlight-pill {
+  display: inline-block;
+  background: #15803d;
+  color: #fef08a;
+  font-size: 1.45rem;
+  font-weight: 800;
+  padding: 10px 28px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.35);
+  border: 2px solid #86efac;
+}
+
+.free-delivery-notice {
+  font-size: 1.2rem;
+  color: #0f172a;
+  background: #fef08a;
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* =========================================================
+   PAGE 3: CUSTOMER REVIEWS (FACEBOOK MOCK & PROOF GALLERY)
+   ========================================================= */
+.section-title-bordered {
+  border: 3px solid #16a34a;
+  border-radius: 16px;
+  padding: 14px 24px;
+  background: #f0fdf4;
+  display: inline-block;
+  margin: 0 auto 30px auto;
+}
+
+.section-title-bordered h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #14532d;
+  margin: 0;
+}
+
+.fb-review-mock-card {
+  max-width: 640px;
+  margin: 0 auto 30px auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+}
+
+.fb-review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.fb-avatar {
+  width: 44px;
+  height: 44px;
+  background: #e7f3ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fb-author-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.fb-follow-tag {
+  color: #1877f2;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.fb-time-stamp {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.fb-comment-body {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #1e293b;
+  margin-bottom: 14px;
+}
+
+.fb-comment-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.fb-reactions {
+  font-weight: 600;
+  color: #e11d48;
+}
+
+.fb-actions {
+  display: flex;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   PAGE 4: CHECKOUT ORDER FORM ENHANCEMENTS
+   ========================================================= */
+.order-header-pill {
+  background: #ffffff;
+  border: 3px solid #16a34a;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  display: inline-block;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.15);
+}
+
+.order-header-pill h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.cod-payment-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-top: 18px;
+}
+
+.cod-heading {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.cod-body-box p {
+  font-size: 0.92rem;
+  color: #475569;
+  margin: 0;
+}
+
+.privacy-notice-text {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 16px 0;
+}
+
+.privacy-notice-text a {
+  color: #15803d;
+  text-decoration: underline;
+}
+
+.lock-icon {
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   PAGE 4: FOOTER
+   ========================================================= */
+.site-footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 36px 0;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.footer-policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.footer-policy-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-policy-links a:hover {
+  color: #facc15;
+}
+
+.footer-policy-links .separator {
+  color: #475569;
+}
+
+.footer-helpline-bar {
+  margin-bottom: 14px;
+}
+
+.helpline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #facc15;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.footer-copyright-bar p {
+  color: #64748b;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* Utility classes */
+.mt-20 { margin-top: 20px; }
+.mt-25 { margin-top: 25px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+.mobile-hide { display: inline; }
+
+@media (max-width: 640px) {
+  .mobile-hide { display: none; }
+  .attention-main-title { font-size: 1.5rem; }
+  .attention-subtitle { font-size: 1.1rem; }
+  .guarantee-text { font-size: 1rem; }
+  .proof-statement-text { font-size: 0.95rem; }
+  .btn-yellow-cta { font-size: 1.15rem; padding: 14px 28px; width: 100%; }
+  .reasons-heading-pill h2, .danger-heading-pill h2 { font-size: 1.25rem; }
+  .order-header-pill h2 { font-size: 1.15rem; }
+  .discount-highlight-pill { font-size: 1.15rem; padding: 8px 18px; }
+}
+
+

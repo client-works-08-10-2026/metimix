@@ -99,6 +99,11 @@ function updateOrderCalculations() {
   if (subtotalEl) subtotalEl.textContent = formattedPriceText;
   if (totalEl) totalEl.textContent = formattedPriceText;
   if (mobileBarPrice) mobileBarPrice.textContent = `৳${totalPrice}`;
+
+  const submitBtnText = document.getElementById('submitBtnText');
+  if (submitBtnText) {
+    submitBtnText.textContent = `কনফার্ম অর্ডার ${formattedPriceText}`;
+  }
 }
 
 // 4. Order Form Submission Handling
