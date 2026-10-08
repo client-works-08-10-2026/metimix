@@ -201,35 +201,26 @@ button {
   gap: 10px;
 }
 
-.logo-icon-wrap {
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, #22c55e, #15803d);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  box-shadow: 0 6px 15px rgba(22, 101, 52, 0.25);
+.brand-logo-img {
+  height: 48px;
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: var(--transition);
 }
 
-.logo-text-group {
-  display: flex;
-  flex-direction: column;
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.04);
 }
 
-.logo-title {
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #14532d;
-  line-height: 1.1;
-  letter-spacing: -0.3px;
-}
-
-.logo-tagline {
-  font-size: 0.75rem;
-  color: #15803d;
-  font-weight: 600;
+.footer-logo-img {
+  height: 42px;
+  max-height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
 }
 
 .desktop-nav {
