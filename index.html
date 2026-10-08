@@ -441,296 +441,117 @@
           <div class="cert-badge-card">
             <div class="cert-icon-circle">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg>
+        <div class="order-box-wrapper custom-checkout-wrapper">
+        <form id="orderForm" class="checkout-grid-layout" onsubmit="handleOrderSubmit(event)">
+          
+          <!-- Left Column: Billing Details & Shipping -->
+          <div class="checkout-billing-col">
+            <h3 class="checkout-heading">Billing details</h3>
+
+            <div class="checkout-field-group">
+              <label for="customerName" class="checkout-label">আপনার নাম লিখুন <span class="req">*</span></label>
+              <input type="text" id="customerName" name="name" class="checkout-input" placeholder="" required autocomplete="name">
             </div>
-            <h4>ল্যাব টেস্টেড</h4>
-            <span>১০০% বিশুদ্ধ ও পরীক্ষিত ভেষজ</span>
-          </div>
 
-          <div class="cert-badge-card">
-            <div class="cert-icon-circle">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="12" r="3"/></svg>
+            <div class="checkout-field-group">
+              <label for="customerPhone" class="checkout-label">মোবাইল নাম্বার <span class="req">*</span></label>
+              <input type="tel" id="customerPhone" name="phone" class="checkout-input" placeholder="016XXXXXXXX" required pattern="^(?:\+?88|01)?\d{9,11}$">
             </div>
-            <h4>অরিজিনাল পণ্য</h4>
-            <span>সরাসরি অথেনটিক প্রোডাক্ট</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Offer Section — Conversion Booster -->
-  <section class="offers-section" id="offers">
-    <div class="container">
-      <div class="section-heading text-center">
-        <span class="sub-title-pill">লিমিটেড অফার</span>
-        <h2 class="section-title">🔥 আজকের বিশেষ প্যাকেজ অফারসমূহ</h2>
-        <p class="section-subtitle">আপনার প্রয়োজন অনুযায়ী সঠিক প্যাকেজটি নির্বাচন করুন ও বড় ছাড় উপভোগ করুন</p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- Package 1: 1 Month -->
-        <div class="pricing-card" data-package="pkg1" data-price="590" data-free-shipping="false">
-          <div class="pricing-header">
-            <span class="pkg-duration">ট্রায়াল প্যাক</span>
-            <h3 class="pkg-title">১ মাসের প্যাকেজ</h3>
-            <div class="pkg-price-row">
-              <span class="current-price">৳৫৯০</span>
+            <div class="checkout-field-group">
+              <label for="customerAddress" class="checkout-label">আপনার ঠিকানা লিখুন <span class="req">*</span></label>
+              <input type="text" id="customerAddress" name="address" class="checkout-input" placeholder="গ্রাম/ব্লক, থানা, জেলা" required>
             </div>
-            <div class="pkg-shipping-text">+ ডেলিভারি চার্জ প্রযোজ্য</div>
-          </div>
 
-          <div class="pkg-image-box">
-            <img src="file_00000000b17c71faad672dd7f824df691-300x300.png" alt="১ মাসের প্যাকেজ">
-          </div>
-
-          <ul class="pkg-features">
-            <li><span class="chk">✓</span> ১টি মেথিমিক্স কৌটো (১০০ গ্রাম)</li>
-            <li><span class="chk">✓</span> সাধারণ গ্যাস ও বুকজ্বালা দূর করতে</li>
-            <li><span class="chk">✓</span> ৩০ দিনের নিয়মিত সেবন মাত্রা</li>
-            <li><span class="chk">✓</span> ক্যাশ অন ডেলিভারি সুবিধা</li>
-          </ul>
-
-          <div class="pkg-btn-wrap">
-            <button class="btn-select-pkg" onclick="selectPackageAndScroll('pkg1')">
-              <span>প্যাকেজটি নির্বাচন করুন</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Package 2: 2 Months (POPULAR) -->
-        <div class="pricing-card popular-card featured" data-package="pkg2" data-price="990" data-free-shipping="true">
-          <div class="popular-ribbon">🔥 সর্বাধিক জনপ্রিয় পছন্দ</div>
-          <div class="pricing-header">
-            <span class="pkg-duration">জনপ্রিয় রিকমেন্ডেড প্যাক</span>
-            <h3 class="pkg-title">২ মাসের প্যাকেজ</h3>
-            <div class="pkg-price-row">
-              <span class="old-price">৳১,০০০</span>
-              <span class="current-price highlight">৳৯৯০</span>
-            </div>
-            <div class="free-shipping-tag">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>সারা দেশে ফ্রি হোম ডেলিভারি!</span>
-            </div>
-          </div>
-
-          <div class="pkg-image-box dual-img">
-            <img src="file_00000000b17c71faad672dd7f824df691-300x300.png" alt="২ মাসের প্যাকেজ" class="sub-img">
-            <img src="file_00000000b17c71faad672dd7f824df691-300x300.png" alt="২ মাসের প্যাকেজ" class="main-img">
-          </div>
-
-          <ul class="pkg-features">
-            <li><span class="chk">✓</span> <strong>২টি মেথিমিক্স কৌটো (২০০ গ্রাম)</strong></li>
-            <li><span class="chk">✓</span> গ্যাস্ট্রিক ও বদহজমের স্থায়ী উপশম</li>
-            <li><span class="chk">✓</span> ৬০ দিনের নিয়মিত কোর্স</li>
-            <li><span class="chk">✓</span> <strong>সম্পূর্ণ ফ্রি ডেলিভারি চার্জ</strong></li>
-            <li><span class="chk">✓</span> ক্যাশ অন ডেলিভারিতে নেওয়ার সুবিধা</li>
-          </ul>
-
-          <div class="pkg-btn-wrap">
-            <button class="btn-select-pkg btn-pkg-highlight" onclick="selectPackageAndScroll('pkg2')">
-              <span>অর্ডার করুন (জনপ্রিয়)</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Package 3: 3 Months -->
-        <div class="pricing-card" data-package="pkg3" data-price="1390" data-free-shipping="true">
-          <div class="save-ribbon">৳১১০ সাশ্রয়ী</div>
-          <div class="pricing-header">
-            <span class="pkg-duration">ফুল কোর্স প্যাক</span>
-            <h3 class="pkg-title">৩ মাসের ফুল কোর্স</h3>
-            <div class="pkg-price-row">
-              <span class="old-price">৳১,৫০০</span>
-              <span class="current-price">৳১,৩৯০</span>
-            </div>
-            <div class="free-shipping-tag">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>সারা দেশে ফ্রি হোম ডেলিভারি!</span>
-            </div>
-          </div>
-
-          <div class="pkg-image-box triple-img">
-            <img src="file_00000000b17c71faad672dd7f824df691-300x300.png" alt="৩ মাসের প্যাকেজ">
-          </div>
-
-          <ul class="pkg-features">
-            <li><span class="chk">✓</span> <strong>৩টি মেথিমিক্স কৌটো (৩০০ গ্রাম)</strong></li>
-            <li><span class="chk">✓</span> দীর্ঘস্থায়ী পেটের সুস্থতা ও IBS নিয়ন্ত্রণ</li>
-            <li><span class="chk">✓</span> ৯০ দিনের সম্পূর্ণ রিভাইটালাইজেশন কোর্স</li>
-            <li><span class="chk">✓</span> <strong>সম্পূর্ণ ফ্রি ডেলিভারি চার্জ</strong></li>
-            <li><span class="chk">✓</span> সর্বোচ্চ সাশ্রয়ী ও কার্যকর কোর্স</li>
-          </ul>
-
-          <div class="pkg-btn-wrap">
-            <button class="btn-select-pkg" onclick="selectPackageAndScroll('pkg3')">
-              <span>ফুল কোর্স অর্ডার করুন</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- High-Converting Order Form Section -->
-  <section class="order-form-section" id="order-form-section">
-    <div class="container">
-      <div class="order-box-wrapper">
-        <div class="order-form-header text-center">
-          <div class="order-icon-pill">🛒 দ্রুত অর্ডার ফরম</div>
-          <h2 class="order-title">আপনার তথ্য দিয়ে অর্ডার কনফার্ম করুন</h2>
-          <p class="order-subtitle">অর্ডার করতে নিচের ফর্মে আপনার সঠিক তথ্য পূরণ করুন। আমাদের প্রতিনিধি কল করে নিশ্চিত করবেন।</p>
-        </div>
-
-        <form id="orderForm" class="clean-order-form" onsubmit="handleOrderSubmit(event)">
-          <div class="form-layout-grid">
-            
-            <!-- Left Inputs -->
-            <div class="form-inputs-col">
-              <!-- Full Name -->
-              <div class="form-group">
-                <label for="customerName">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  <span>আপনার নাম লিখুন <strong class="req">*</strong></span>
-                </label>
-                <input type="text" id="customerName" name="name" placeholder="যেমন: মো: কামরুল হাসান" required autocomplete="name">
-              </div>
-
-              <!-- Phone Number -->
-              <div class="form-group">
-                <label for="customerPhone">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  <span>মোবাইল নম্বর লিখুন <strong class="req">*</strong></span>
-                </label>
-                <input type="tel" id="customerPhone" name="phone" placeholder="যেমন: 017XXXXXXXX বা 018XXXXXXXX" required pattern="^(?:\+?88|01)?\d{9,11}$">
-                <span class="field-hint">ডেলিভারির সময় এই নম্বরে কল করা হবে</span>
-              </div>
-
-              <!-- Delivery Address -->
-              <div class="form-group">
-                <label for="customerAddress">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <span>সম্পূর্ণ ডেলিভারি ঠিকানা <strong class="req">*</strong></span>
-                </label>
-                <textarea id="customerAddress" name="address" rows="3" placeholder="গ্রাম/রোড নম্বর, বাড়ি নম্বর, থানা ও জেলার নাম লিখুন..." required></textarea>
-              </div>
-
-              <!-- Delivery Location Selection -->
-              <div class="form-group">
-                <label>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                  <span>আপনার এলাকা নির্বাচন করুন <strong class="req">*</strong></span>
-                </label>
-                <div class="delivery-radio-group">
-                  <label class="delivery-radio-option">
-                    <input type="radio" name="deliveryLocation" value="inside" checked onchange="updateOrderCalculations()">
-                    <span class="radio-box">
-                      <span class="loc-name">ঢাকার ভেতরে</span>
-                      <span class="loc-charge" id="insideChargeText">৳৬০</span>
-                    </span>
-                  </label>
-                  <label class="delivery-radio-option">
-                    <input type="radio" name="deliveryLocation" value="outside" onchange="updateOrderCalculations()">
-                    <span class="radio-box">
-                      <span class="loc-name">ঢাকার বাইরে</span>
-                      <span class="loc-charge" id="outsideChargeText">৳১২০</span>
-                    </span>
-                  </label>
-                </div>
+            <div class="checkout-shipping-block">
+              <h3 class="checkout-heading shipping-title">Shipping</h3>
+              <div class="shipping-charge-box">
+                <span class="shipping-charge-text">ডেলিভারী চার্জ ফ্রি</span>
               </div>
             </div>
+          </div>
 
-            <!-- Right Package Selection & Summary -->
-            <div class="form-summary-col">
-              <label class="section-label">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
-                <span>প্যাকেজ নির্বাচন করুন <strong class="req">*</strong></span>
-              </label>
+          <!-- Right Column: Your Order & Order Bump -->
+          <div class="checkout-order-col">
+            <h3 class="checkout-heading">Your order</h3>
 
-              <!-- Selectable Package Items -->
-              <div class="package-select-list">
-                <!-- Option 1 -->
-                <label class="pkg-choice-item" id="opt-pkg1">
-                  <input type="radio" name="selectedPackage" value="pkg1" onchange="onPackageChange('pkg1')">
-                  <div class="pkg-choice-content">
-                    <div class="pkg-title-line">
-                      <strong>১ মাসের প্যাকেজ (১টি কৌটো)</strong>
-                      <span class="item-price">৳৫৯০</span>
-                    </div>
-                    <span class="pkg-note">+ রেগুলার ডেলিভারি চার্জ</span>
+            <div class="checkout-order-table">
+              <div class="order-table-head">
+                <span class="col-prod">Product</span>
+                <span class="col-sub">Subtotal</span>
+              </div>
+
+              <!-- Main Product Row -->
+              <div class="order-table-row main-prod-row">
+                <div class="prod-left-detail">
+                  <div class="prod-thumb">
+                    <img src="main-banner.jpg" alt="কোষ্ঠকিউর- 400gm">
                   </div>
-                </label>
+                  <span class="prod-title-text">কোষ্ঠকিউর- 400gm</span>
+                </div>
+                <div class="prod-right-pricing">
+                  <span class="qty-multiply">× 1</span>
+                  <span class="price-val" id="mainProdPriceDisplay">990.00৳</span>
+                </div>
+              </div>
 
-                <!-- Option 2 (Default Selected) -->
-                <label class="pkg-choice-item selected" id="opt-pkg2">
-                  <input type="radio" name="selectedPackage" value="pkg2" checked onchange="onPackageChange('pkg2')">
-                  <div class="pkg-choice-content">
-                    <div class="pkg-title-line">
-                      <strong>২ মাসের প্যাকেজ (২টি কৌটো) <span class="badge-mini">জনপ্রিয়</span></strong>
-                      <span class="item-price">৳৯৯০</span>
-                    </div>
-                    <span class="pkg-note text-green">★ ফ্রি ডেলিভারি অফার</span>
+              <!-- Upsell Bump Row (Dynamic) -->
+              <div class="order-table-row bump-prod-row" id="bumpTableRow" style="display: none;">
+                <div class="prod-left-detail">
+                  <div class="prod-thumb">
+                    <img src="file_00000000b17c71faad672dd7f824df691-300x300.png" alt="মেথিমিক্স">
                   </div>
-                </label>
-
-                <!-- Option 3 -->
-                <label class="pkg-choice-item" id="opt-pkg3">
-                  <input type="radio" name="selectedPackage" value="pkg3" onchange="onPackageChange('pkg3')">
-                  <div class="pkg-choice-content">
-                    <div class="pkg-title-line">
-                      <strong>৩ মাসের ফুল কোর্স (৩টি কৌটো)</strong>
-                      <span class="item-price">৳১,৩৯০</span>
-                    </div>
-                    <span class="pkg-note text-green">★ ফ্রি ডেলিভারি অফার + সেরা সাশ্রয়ী</span>
-                  </div>
-                </label>
-              </div>
-
-              <!-- Order Summary Card -->
-              <div class="order-calculation-card">
-                <h4 class="calc-title">অর্ডার সারাংশ</h4>
-                <div class="calc-row">
-                  <span>প্যাকেজের মূল্য:</span>
-                  <span id="summaryPackagePrice">৳৯৯০</span>
+                  <span class="prod-title-text">মেথিমিক্স (৫০% অফার)</span>
                 </div>
-                <div class="calc-row">
-                  <span>ডেলিভারি চার্জ:</span>
-                  <span id="summaryDeliveryCharge" class="text-green">ফ্রি (০ টাকা)</span>
-                </div>
-                <div class="calc-divider"></div>
-                <div class="calc-row total-row">
-                  <strong>সর্বমোট প্রদেয় মূল্য:</strong>
-                  <strong class="total-amount" id="summaryTotalPrice">৳৯৯০</strong>
+                <div class="prod-right-pricing">
+                  <span class="qty-multiply">× 1</span>
+                  <span class="price-val">490.00৳</span>
                 </div>
               </div>
 
-              <!-- Payment Method Info -->
-              <div class="cod-banner">
-                <div class="cod-icon">💵</div>
-                <div>
-                  <strong>ক্যাশ অন ডেলিভারি (Cash on Delivery)</strong>
-                  <p>কোনো অগ্রিম টাকা দিতে হবে না। পার্সেল ডেলিভারি ম্যানের কাছ থেকে বুঝে নিয়ে টাকা পরিশোধ করুন।</p>
-                </div>
+              <!-- Subtotal Row -->
+              <div class="order-total-line subtotal-line">
+                <span class="label-text">Subtotal</span>
+                <span class="val-text" id="subtotalDisplay">990.00৳</span>
               </div>
 
-              <!-- Submit Button -->
-              <button type="submit" class="btn-submit-order" id="submitOrderBtn">
-                <span class="btn-icon">🛒</span>
-                <span class="btn-text">অর্ডার কনফার্ম করুন</span>
-                <span class="arrow">➔</span>
+              <!-- Total Row -->
+              <div class="order-total-line final-total-line">
+                <span class="label-text">Total</span>
+                <span class="val-text" id="totalDisplay">990.00৳</span>
+              </div>
+            </div>
+
+            <!-- Order Bump Upsell Card -->
+            <div class="order-bump-card" id="orderBumpCard">
+              <div class="bump-header" onclick="toggleBumpBox()">
+                <span class="bump-arrow-anim">➡️</span>
+                <input type="checkbox" id="bumpOfferCheck" class="bump-check" onchange="onBumpToggle(this.checked)" onclick="event.stopPropagation()">
+                <span class="bump-arrow-anim">👈</span>
+                <label for="bumpOfferCheck" class="bump-header-text" onclick="event.stopPropagation()">মেথিমিক্স সহ নিতে ক্লিক করুন</label>
+              </div>
+              <div class="bump-body">
+                <div class="bump-img-box">
+                  <img src="file_00000000b17c71faad672dd7f824df691-300x300.png" alt="মেথিমিক্স অফার">
+                </div>
+                <div class="bump-info">
+                  <h4 class="bump-heading">এই মুহূর্তের স্পেশাল অফার🔥</h4>
+                  <p class="bump-description">
+                    <del>১০০০ টাকার</del> মেথিমিক্স – <strong>৫০% ছাড়ে মাত্র ৪৯০ টাকা!</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="checkout-submit-wrap">
+              <button type="submit" class="btn-checkout-place-order pulse-button" id="submitOrderBtn">
+                <span>অর্ডার কনফার্ম করুন (ক্যাশ অন ডেলিভারি)</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
               </button>
-
-              <div class="security-guarantee">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>আপনার সকল তথ্য সম্পূর্ণ সুরক্ষিত থাকবে</span>
-              </div>
-
             </div>
 
           </div>
-        </form>
 
       </div>
     </div>

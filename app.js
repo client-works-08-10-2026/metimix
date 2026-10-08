@@ -1,28 +1,15 @@
-/**
- * METHIMIX LANDING PAGE JAVASCRIPT
- * Real-time Order Calculator, Package Sync, Live FOMO Popups, FAQ Accordion, Proof Modal
- */
-
-// Package configurations
-const PACKAGES = {
-  pkg1: {
-    name: '১ মাসের প্যাকেজ (১টি কৌটো)',
-    price: 590,
-    freeDelivery: false
-  },
-  pkg2: {
-    name: '২ মাসের প্যাকেজ (২টি কৌটো)',
-    price: 990,
-    freeDelivery: true
-  },
-  pkg3: {
-    name: '৩ মাসের ফুল কোর্স (৩টি কৌটো)',
-    price: 1390,
-    freeDelivery: true
-  }
+// Product & Pricing configurations
+const BASE_PRODUCT = {
+  name: 'কোষ্ঠকিউর- 400gm',
+  price: 990
 };
 
-let currentSelectedPkg = 'pkg2'; // Default selected
+const BUMP_PRODUCT = {
+  name: 'মেথিমিক্স (৫০% অফার)',
+  price: 490
+};
+
+let hasBumpOffer = false;
 
 // Convert English digits to Bengali digits
 function toBengaliNumerals(num) {
@@ -68,98 +55,68 @@ function initCountdownTimer() {
   }, 1000);
 }
 
-// 2. Package Selection from Offer Cards with Smooth Scroll
-function selectPackageAndScroll(pkgKey) {
-  currentSelectedPkg = pkgKey;
-
-  // Check radio button in the order form
-  const radio = document.querySelector(`input[name="selectedPackage"][value="${pkgKey}"]`);
-  if (radio) {
-    radio.checked = true;
-  }
-
-  // Highlight card inside order form
-  document.querySelectorAll('.pkg-choice-item').forEach(item => item.classList.remove('selected'));
-  const activeItem = document.getElementById(`opt-${pkgKey}`);
-  if (activeItem) activeItem.classList.add('selected');
-
-  updateOrderCalculations();
-
-  // Smooth scroll to order form
-  const orderSection = document.getElementById('order-form-section');
-  if (orderSection) {
-    orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// 2. Order Bump Upsell Handling
+function toggleBumpBox() {
+  const bumpCheck = document.getElementById('bumpOfferCheck');
+  if (bumpCheck) {
+    bumpCheck.checked = !bumpCheck.checked;
+    onBumpToggle(bumpCheck.checked);
   }
 }
 
-// 3. Package selection from inside the Order Form
-function onPackageChange(pkgKey) {
-  currentSelectedPkg = pkgKey;
-  
-  document.querySelectorAll('.pkg-choice-item').forEach(item => item.classList.remove('selected'));
-  const activeItem = document.getElementById(`opt-${pkgKey}`);
-  if (activeItem) activeItem.classList.add('selected');
+function onBumpToggle(isChecked) {
+  hasBumpOffer = isChecked;
+  const bumpRow = document.getElementById('bumpTableRow');
+  const bumpCard = document.getElementById('orderBumpCard');
 
-  updateOrderCalculations();
-}
-
-// 4. Calculate Total and Update DOM
-function updateOrderCalculations() {
-  const pkg = PACKAGES[currentSelectedPkg];
-  const deliveryLocEl = document.querySelector('input[name="deliveryLocation"]:checked');
-  const deliveryLoc = deliveryLocEl ? deliveryLocEl.value : 'inside';
-
-  let deliveryFee = 0;
-  if (pkg.freeDelivery) {
-    deliveryFee = 0;
-  } else {
-    deliveryFee = (deliveryLoc === 'inside') ? 60 : 120;
+  if (bumpRow) {
+    bumpRow.style.display = isChecked ? 'flex' : 'none';
   }
 
-  const totalPrice = pkg.price + deliveryFee;
-
-  // Update Summary elements
-  const summaryPackagePrice = document.getElementById('summaryPackagePrice');
-  const summaryDeliveryCharge = document.getElementById('summaryDeliveryCharge');
-  const summaryTotalPrice = document.getElementById('summaryTotalPrice');
-  const mobileBarPrice = document.getElementById('mobileBarPrice');
-
-  if (summaryPackagePrice) {
-    summaryPackagePrice.textContent = formatCurrency(pkg.price);
-  }
-
-  if (summaryDeliveryCharge) {
-    if (deliveryFee === 0) {
-      summaryDeliveryCharge.textContent = 'ফ্রি (০ টাকা)';
-      summaryDeliveryCharge.className = 'text-green font-bold';
+  if (bumpCard) {
+    if (isChecked) {
+      bumpCard.classList.add('bump-active');
     } else {
-      summaryDeliveryCharge.textContent = formatCurrency(deliveryFee);
-      summaryDeliveryCharge.className = 'font-bold';
+      bumpCard.classList.remove('bump-active');
     }
   }
 
-  if (summaryTotalPrice) {
-    summaryTotalPrice.textContent = formatCurrency(totalPrice);
-  }
-
-  if (mobileBarPrice) {
-    mobileBarPrice.textContent = formatCurrency(totalPrice);
-  }
+  updateOrderCalculations();
 }
 
-// 5. Order Form Submission Handling
+// 3. Calculate Total and Update DOM
+function updateOrderCalculations() {
+  const basePrice = BASE_PRODUCT.price;
+  const bumpPrice = hasBumpOffer ? BUMP_PRODUCT.price : 0;
+  const totalPrice = basePrice + bumpPrice;
+
+  const subtotalEl = document.getElementById('subtotalDisplay');
+  const totalEl = document.getElementById('totalDisplay');
+  const mobileBarPrice = document.getElementById('mobileBarPrice');
+
+  const formattedPriceText = `${totalPrice}.00৳`;
+
+  if (subtotalEl) subtotalEl.textContent = formattedPriceText;
+  if (totalEl) totalEl.textContent = formattedPriceText;
+  if (mobileBarPrice) mobileBarPrice.textContent = `৳${totalPrice}`;
+}
+
+// 4. Order Form Submission Handling
 function handleOrderSubmit(event) {
   event.preventDefault();
 
   const name = document.getElementById('customerName').value.trim();
   const phone = document.getElementById('customerPhone').value.trim();
   const address = document.getElementById('customerAddress').value.trim();
-  const pkg = PACKAGES[currentSelectedPkg];
 
-  const deliveryLocEl = document.querySelector('input[name="deliveryLocation"]:checked');
-  const deliveryLoc = deliveryLocEl ? deliveryLocEl.value : 'inside';
-  let deliveryFee = pkg.freeDelivery ? 0 : (deliveryLoc === 'inside' ? 60 : 120);
-  const total = pkg.price + deliveryFee;
+  const basePrice = BASE_PRODUCT.price;
+  const bumpPrice = hasBumpOffer ? BUMP_PRODUCT.price : 0;
+  const totalPrice = basePrice + bumpPrice;
+
+  let orderItemsSummary = BASE_PRODUCT.name;
+  if (hasBumpOffer) {
+    orderItemsSummary += ` + ${BUMP_PRODUCT.name}`;
+  }
 
   if (!name || !phone || !address) {
     alert('অনুগ্রহ করে আপনার নাম, মোবাইল নম্বর এবং সম্পূর্ণ ঠিকানা সঠিকভাবে পূরণ করুন।');
@@ -168,8 +125,8 @@ function handleOrderSubmit(event) {
 
   // Populate Success Modal
   document.getElementById('confirmPhoneDisplay').textContent = phone;
-  document.getElementById('confirmPackageDisplay').textContent = pkg.name;
-  document.getElementById('confirmTotalDisplay').textContent = formatCurrency(total);
+  document.getElementById('confirmPackageDisplay').textContent = orderItemsSummary;
+  document.getElementById('confirmTotalDisplay').textContent = `৳${totalPrice} (ডেলিভারি ফ্রি)`;
 
   // Open Modal
   const successModal = document.getElementById('successModal');
@@ -179,9 +136,11 @@ function handleOrderSubmit(event) {
 
   // Reset Form
   document.getElementById('orderForm').reset();
-  // Restore selected package radio
-  const defaultRadio = document.querySelector(`input[name="selectedPackage"][value="${currentSelectedPkg}"]`);
-  if (defaultRadio) defaultRadio.checked = true;
+  hasBumpOffer = false;
+  const bumpRow = document.getElementById('bumpTableRow');
+  const bumpCard = document.getElementById('orderBumpCard');
+  if (bumpRow) bumpRow.style.display = 'none';
+  if (bumpCard) bumpCard.classList.remove('bump-active');
   updateOrderCalculations();
 }
 
